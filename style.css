@@ -1605,3 +1605,82 @@ footer {
     height: 100%;
     object-fit: cover;
 }
+
+/* ========== 年份相册布局 ========== */
+.year-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.year-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary);
+    opacity: 0.3;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    min-width: 50px;
+    text-align: center;
+}
+
+.year-gallery {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.year-gallery .polaroid-card {
+    grid-row: span 1;
+}
+
+.year-gallery .polaroid-card.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.year-gallery .polaroid-card.tall {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* 响应式 */
+@media (max-width: 900px) {
+    .year-section {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .year-label {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 2rem;
+    }
+    
+    .year-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .year-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .year-gallery .polaroid-card.large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .year-gallery .polaroid-card.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
