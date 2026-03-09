@@ -8,6 +8,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 左侧游戏动画 -->
+    <div class="game-sidebar">
+        <!-- 战斗机 -->
+        <div class="game-fighter">
+            <div class="fighter-body"></div>
+            <div class="fighter-cockpit"></div>
+            <div class="fighter-wing-left"></div>
+            <div class="fighter-wing-right"></div>
+            <div class="fighter-engine"></div>
+            <!-- 子弹 -->
+            <div class="game-bullet"></div>
+            <div class="game-bullet"></div>
+            <div class="game-bullet"></div>
+        </div>
+        <!-- 敌机 -->
+        <div class="game-enemy">
+            <div class="enemy-body"><div class="enemy-glow"></div></div>
+        </div>
+        <div class="game-enemy">
+            <div class="enemy-body"><div class="enemy-glow"></div></div>
+        </div>
+        <div class="game-enemy">
+            <div class="enemy-body"><div class="enemy-glow"></div></div>
+        </div>
+    </div>
+
+    <!-- 主内容 -->
+    <div class="game-content">
     <!-- 导航栏 -->
     <nav class="navbar" id="navbar">
         <div class="nav-content">
@@ -196,6 +224,9 @@
             </div>
         </div>
     </section>
+
+    </div>
+    </div>
 
     <!-- 页脚 -->
     <footer>

@@ -1800,3 +1800,254 @@ footer {
     0% { transform: translateX(0); opacity: 0.7; }
     100% { transform: translateX(300px); opacity: 0; }
 }
+
+/* ========== 页面左侧游戏动画 ========== */
+.game-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* 战斗机 - 更精细的像素建模 */
+.game-fighter {
+    position: absolute;
+    left: 25px;
+    width: 30px;
+    height: 40px;
+    animation: fighterMove 3s ease-in-out infinite;
+    z-index: 10;
+}
+
+.fighter-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
+    clip-path: polygon(
+        50% 0%,  /* 机头 */
+        65% 15%,
+        80% 25%,
+        100% 35%,
+        100% 50%,
+        90% 55%,
+        80% 60%,
+        80% 75%,
+        70% 80%,
+        50% 100%,  /* 机尾 */
+        30% 80%,
+        20% 75%,
+        20% 60%,
+        10% 55%,
+        0% 50%,
+        0% 35%,
+        20% 25%,
+        35% 15%
+    );
+}
+
+/* 驾驶舱 */
+.fighter-cockpit {
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    width: 30%;
+    height: 20%;
+    background: #22d3ee;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+/* 机翼 */
+.fighter-wing-left,
+.fighter-wing-right {
+    position: absolute;
+    background: linear-gradient(180deg, #60a5fa, #3b82f6);
+}
+
+.fighter-wing-left {
+    top: 45%;
+    left: -10px;
+    width: 12px;
+    height: 25px;
+    transform: skewY(-15deg);
+}
+
+.fighter-wing-right {
+    top: 45%;
+    right: -10px;
+    width: 12px;
+    height: 25px;
+    transform: skewY(15deg);
+}
+
+/* 引擎火焰 */
+.fighter-engine {
+    position: absolute;
+    bottom: -8px;
+    left: 35%;
+    width: 30%;
+    height: 10px;
+    background: linear-gradient(180deg, #f97316, #ef4444, transparent);
+    border-radius: 50%;
+    animation: engineFlame 0.1s ease-in-out infinite alternate;
+}
+
+@keyframes fighterMove {
+    0%, 100% { transform: translateX(0) translateY(20px); }
+    25% { transform: translateX(20px) translateY(40px); }
+    50% { transform: translateX(0) translateY(60px); }
+    75% { transform: translateX(-15px) translateY(30px); }
+}
+
+@keyframes engineFlame {
+    from { height: 8px; opacity: 0.8; }
+    to { height: 12px; opacity: 1; }
+}
+
+/* 子弹 - 竖向发射 */
+.game-bullet {
+    position: absolute;
+    width: 4px;
+    height: 12px;
+    background: linear-gradient(180deg, #22d3ee, #06b6d4);
+    border-radius: 2px;
+    left: 38px;
+    animation: bulletUp 1.5s linear infinite;
+    box-shadow: 0 0 6px #22d3ee;
+}
+
+.game-bullet:nth-child(2) { animation-delay: 0.5s; }
+.game-bullet:nth-child(3) { animation-delay: 1s; }
+
+@keyframes bulletUp {
+    0% { top: 40px; opacity: 1; }
+    100% { top: -100px; opacity: 0; }
+}
+
+/* 敌机 - 从上往下飞 */
+.game-enemy {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 28px;
+    animation: enemyDown 4s linear infinite;
+}
+
+.enemy-body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #ef4444, #b91c1c);
+    clip-path: polygon(
+        50% 0%,
+        65% 20%,
+        100% 35%,
+        100% 65%,
+        80% 80%,
+        50% 100%,
+        20% 80%,
+        0% 65%,
+        0% 35%,
+        35% 20%
+    );
+    position: relative;
+}
+
+/* 敌机发光 */
+.enemy-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    background: #fbbf24;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: enemyPulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes enemyDown {
+    0% { top: -30px; opacity: 1; }
+    80% { opacity: 1; }
+    100% { top: 110vh; opacity: 0; }
+}
+
+@keyframes enemyPulse {
+    from { transform: translate(-50%, -50%) scale(0.8); opacity: 0.4; }
+    to { transform: translate(-50%, -50%) scale(1.1); opacity: 0.7; }
+}
+
+.game-enemy:nth-child(1) { left: 10px; animation-delay: 0s; }
+.game-enemy:nth-child(2) { left: 45px; animation-delay: 1.3s; }
+.game-enemy:nth-child(3) { left: 20px; animation-delay: 2.6s; }
+
+/* 爆炸效果 */
+.explosion {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 25px;
+    animation: explode 0.5s ease-out forwards;
+    display: none;
+}
+
+.explosion::before,
+.explosion::after {
+    content: '';
+    position: absolute;
+    background: #fbbf24;
+    border-radius: 50%;
+}
+
+.explosion::before {
+    width: 100%;
+    height: 100%;
+    animation: exp1 0.3s ease-out forwards;
+}
+
+.explosion::after {
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    background: #f97316;
+    animation: exp2 0.4s ease-out forwards;
+}
+
+@keyframes explode {
+    0% { opacity: 1; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
+
+@keyframes exp1 {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+@keyframes exp2 {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+/* 游戏区域文字层 */
+.game-content {
+    position: relative;
+    z-index: 1;
+    margin-left: 80px;
+}
+
+/* 响应式 - 移动端隐藏 */
+@media (max-width: 768px) {
+    .game-sidebar {
+        display: none;
+    }
+    .game-content {
+        margin-left: 0;
+    }
+}
