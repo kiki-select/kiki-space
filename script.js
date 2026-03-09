@@ -60,38 +60,4 @@ document.querySelectorAll('.skill-item').forEach((item, index) => {
     item.querySelector('.skill-fill').style.animationDelay = `${index * 0.2}s`;
 });
 
-// 游戏页面敌机消灭动画
-function initGameAnimation() {
-    const enemies = document.querySelectorAll('.game-enemy');
-    const explosions = document.querySelectorAll('.game-explosion');
-    
-    if (enemies.length === 0) return;
-    
-    // 敌机到达中间时触发爆炸
-    enemies.forEach((enemy, index) => {
-        enemy.addEventListener('animationiteration', () => {
-            // 重置爆炸
-            explosions[index].classList.remove('active');
-        });
-        
-        // 监听动画进行，当敌机到达中间位置时显示爆炸
-        const animationDuration = 4000; // 4秒
-        const hitTime = animationDuration * 0.4; // 40%时到达中间
-        
-        setTimeout(() => {
-            if (enemy.style.animationPlayState !== 'paused') {
-                explosions[index].classList.add('active');
-                setTimeout(() => {
-                    explosions[index].classList.remove('active');
-                }, 400);
-            }
-        }, hitTime + index * 1300);
-    });
-}
-
-// 页面加载后初始化游戏动画
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(initGameAnimation, 100);
-});
-
 console.log('🎮 KiKi 的个人网站已加载！');
