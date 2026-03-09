@@ -1802,3 +1802,91 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+/* ========== 工作经历 - 数字跳动动画 ========== */
+.exp-header .floating-numbers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.float-num {
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary);
+    opacity: 0.1;
+    animation: floatNum 6s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.3s);
+}
+
+.float-num:nth-child(odd) {
+    color: var(--secondary);
+}
+
+.float-num:nth-child(1) { top: 10%; left: 10%; }
+.float-num:nth-child(2) { top: 20%; left: 30%; }
+.float-num:nth-child(3) { top: 60%; left: 15%; }
+.float-num:nth-child(4) { top: 40%; left: 70%; }
+.float-num:nth-child(5) { top: 70%; left: 80%; }
+.float-num:nth-child(6) { top: 25%; left: 85%; }
+.float-num:nth-child(7) { top: 55%; left: 50%; }
+.float-num:nth-child(8) { top: 80%; left: 35%; }
+.float-num:nth-child(9) { top: 15%; left: 60%; }
+.float-num:nth-child(10) { top: 45%; left: 90%; }
+
+@keyframes floatNum {
+    0%, 100% { 
+        transform: translateY(0) scale(1); 
+        opacity: 0.08;
+    }
+    50% { 
+        transform: translateY(-20px) scale(1.1); 
+        opacity: 0.15;
+    }
+}
+
+/* ========== 生活日常 - 花瓣飘落动画 ========== */
+.life-header .falling-petals {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.petal {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: fallPetal 8s linear infinite;
+    animation-delay: calc(var(--i) * 1s);
+    opacity: 0.6;
+}
+
+.petal:nth-child(1) { left: 5%; top: -20px; }
+.petal:nth-child(2) { left: 20%; top: -20px; animation-delay: 1.2s; }
+.petal:nth-child(3) { left: 35%; top: -20px; animation-delay: 2.4s; }
+.petal:nth-child(4) { left: 50%; top: -20px; animation-delay: 3.6s; }
+.petal:nth-child(5) { left: 65%; top: -20px; animation-delay: 4.8s; }
+.petal:nth-child(6) { left: 80%; top: -20px; animation-delay: 6s; }
+.petal:nth-child(7) { left: 95%; top: -20px; animation-delay: 7.2s; }
+
+@keyframes fallPetal {
+    0% { 
+        transform: translateY(0) rotate(0deg) scale(1); 
+        opacity: 0;
+    }
+    10% { 
+        opacity: 0.6; 
+    }
+    90% { 
+        opacity: 0.4; 
+    }
+    100% { 
+        transform: translateY(300px) rotate(360deg) scale(0.8); 
+        opacity: 0;
+    }
+}
