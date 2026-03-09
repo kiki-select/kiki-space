@@ -21,7 +21,7 @@
                 <li><a href="index.html" class="nav-link">主页</a></li>
                 <li><a href="experience.html" class="nav-link active">工作经历</a></li>
                 <li><a href="game.html" class="nav-link">游戏经历</a></li>
-                <li><a href="life.html" class="nav-link">生活随笔</a></li>
+                <li><a href="life.html" class="nav-link">生活日常</a></li>
             </ul>
         </div>
     </nav>
@@ -38,12 +38,122 @@
         </div>
         <div class="page-header-content">
             <h1 class="page-title">工作经历</h1>
-            <p class="page-subtitle">职业生涯的点滴记录</p>
+            <p class="page-subtitle">用数据讲述游戏的故事</p>
         </div>
     </header>
 
-    <!-- 工作经历内容 -->
+    <!-- 核心能力图谱 -->
     <section class="section">
+        <h2 class="section-title">核心能力图谱</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">🔧</div>
+                <h3>底层数据治理</h3>
+                <p>数据仓库搭建 · ETL流程优化 · 数据质量监控</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">📈</div>
+                <h3>用户增长分析</h3>
+                <p>漏斗分析 · 归因模型 · 增长策略制定</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🎯</div>
+                <h3>用户留存模型</h3>
+                <p>LTV预测 · 流失预警 · 留存策略优化</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目橱窗 -->
+    <section class="section">
+        <h2 class="section-title">项目橱窗</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">数据平台</span>
+                    <h3>游戏数据中台建设</h3>
+                </div>
+                <div class="project-content">
+                    <div class="project-challenge">
+                        <span class="label">挑战</span>
+                        <p>各业务线数据孤岛，指标口径不一致，报表产出效率低</p>
+                    </div>
+                    <div class="project-solution">
+                        <span class="label">解决方案</span>
+                        <p>建立统一数据仓库，定义核心指标口径，搭建自动化报表体系</p>
+                    </div>
+                    <div class="project-result">
+                        <span class="label">量化提升</span>
+                        <p class="highlight">报表产出效率 ↑ 70%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">用户增长</span>
+                    <h3>付费用户流失预警</h3>
+                </div>
+                <div class="project-content">
+                    <div class="project-challenge">
+                        <span class="label">挑战</span>
+                        <p>付费用户流失难以提前预警，错失最佳召回时机</p>
+                    </div>
+                    <div class="project-solution">
+                        <span class="label">解决方案</span>
+                        <p>构建流失预警模型，识别高流失风险用户，输出召回策略</p>
+                    </div>
+                    <div class="project-result">
+                        <span class="label">量化提升</span>
+                        <p class="highlight">付费留存率 ↑ 15%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">活动分析</span>
+                    <h3>大型运营活动效果分析</h3>
+                </div>
+                <div class="project-content">
+                    <div class="project-challenge">
+                        <span class="label">挑战</span>
+                        <p>活动效果评估滞后，无法实时优化活动策略</p>
+                    </div>
+                    <div class="project-solution">
+                        <span class="label">解决方案</span>
+                        <p>搭建实时数据看板，设计多维度活动效果评估体系</p>
+                    </div>
+                    <div class="project-result">
+                        <span class="label">量化提升</span>
+                        <p class="highlight">活动ROI ↑ 25%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">数值调优</span>
+                    <h3>游戏经济系统平衡</h3>
+                </div>
+                <div class="project-content">
+                    <div class="project-challenge">
+                        <span class="label">挑战</span>
+                        <p>游戏内货币通胀严重，影响玩家体验和付费意愿</p>
+                    </div>
+                    <div class="project-solution">
+                        <span class="label">解决方案</span>
+                        <p>建立经济模型监控体系，分析产出消耗平衡点，提出调控建议</p>
+                    </div>
+                    <div class="project-result">
+                        <span class="label">量化提升</span>
+                        <p class="highlight">付费ARPU ↑ 18%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作经历时间线 -->
+    <section class="section">
+        <h2 class="section-title">职业履历</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
@@ -52,11 +162,8 @@
                     <span class="company">某游戏公司</span>
                     <span class="period">2022 - 至今</span>
                     <ul>
-                        <li>负责游戏核心指标监控与分析，包括DAU、ARPU、付费转化率等</li>
-                        <li>用户行为分析，挖掘用户留存关键因素，输出运营建议</li>
-                        <li>搭建数据看板，提升数据可读性和决策效率</li>
-                        <li>配合运营活动进行效果分析，优化活动ROI</li>
-                        <li>与产品团队协作，参与游戏数值调优</li>
+                        <li>负责游戏核心指标监控与分析</li>
+                        <li>用户行为分析，输出运营建议</li>
                     </ul>
                 </div>
             </div>
@@ -66,12 +173,6 @@
                     <h3>数据分析师</h3>
                     <span class="company">某互联网公司</span>
                     <span class="period">2020 - 2022</span>
-                    <ul>
-                        <li>负责日常数据报表开发和维护</li>
-                        <li>AB 测试设计与效果评估</li>
-                        <li>用户画像构建与分层运营支持</li>
-                        <li>业务专题分析，输出洞察报告</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -82,19 +183,24 @@
         <div class="contact-section">
             <h3>Let's Connect!</h3>
             <p>有问题想聊？随时找我~</p>
-            <div class="social-links">
-                <a href="#" class="social-btn github">
-                    <span class="btn-icon">🐙</span>
-                    <span>GitHub</span>
-                </a>
-                <a href="#" class="social-btn linkedin">
-                    <span class="btn-icon">💼</span>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="#" class="social-btn email">
-                    <span class="btn-icon">📧</span>
-                    <span>Email</span>
-                </a>
+            <div class="contact-options">
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span class="contact-label">手机</span>
+                    <span class="contact-value">138****8888</span>
+                </div>
+                <div class="contact-item wechat">
+                    <span class="contact-icon">💬</span>
+                    <span class="contact-label">微信</span>
+                    <div class="wechat-qr">
+                        <img src="wechat-qr.png" alt="微信二维码" onerror="this.parentElement.textContent='微信二维码'">
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span class="contact-label">邮箱</span>
+                    <span class="contact-value">kiki@example.com</span>
+                </div>
             </div>
         </div>
         <p class="copyright">© 2026 KiKi | 郑川奇</p>
