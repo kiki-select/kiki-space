@@ -1803,90 +1803,75 @@ footer {
 
 @media (max-width: 768px) {
 
-/* ========== 工作经历 - 数字跳动动画 ========== */
-.exp-header .floating-numbers {
+/* ========== 工作经历 - 像素数据块动画 ========== */
+.exp-header .pixel-data {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
+    left: 5%;
+    top: 30%;
+    display: flex;
+    gap: 8px;
+    z-index: 5;
 }
 
-.float-num {
-    position: absolute;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
-    font-weight: 900;
-    color: var(--primary);
-    opacity: 0.1;
-    animation: floatNum 6s ease-in-out infinite;
-    animation-delay: calc(var(--i) * 0.3s);
+.pixel-block {
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    opacity: 0.6;
+    animation: pixelPulse 1.5s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.2s);
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
 }
 
-.float-num:nth-child(odd) {
-    color: var(--secondary);
+.pixel-block:nth-child(odd) {
+    background: var(--secondary);
 }
 
-.float-num:nth-child(1) { top: 10%; left: 10%; }
-.float-num:nth-child(2) { top: 20%; left: 30%; }
-.float-num:nth-child(3) { top: 60%; left: 15%; }
-.float-num:nth-child(4) { top: 40%; left: 70%; }
-.float-num:nth-child(5) { top: 70%; left: 80%; }
-.float-num:nth-child(6) { top: 25%; left: 85%; }
-.float-num:nth-child(7) { top: 55%; left: 50%; }
-.float-num:nth-child(8) { top: 80%; left: 35%; }
-.float-num:nth-child(9) { top: 15%; left: 60%; }
-.float-num:nth-child(10) { top: 45%; left: 90%; }
-
-@keyframes floatNum {
+@keyframes pixelPulse {
     0%, 100% { 
-        transform: translateY(0) scale(1); 
-        opacity: 0.08;
+        transform: scale(1) translateY(0); 
+        opacity: 0.6;
     }
     50% { 
-        transform: translateY(-20px) scale(1.1); 
-        opacity: 0.15;
+        transform: scale(1.2) translateY(-10px); 
+        opacity: 0.9;
     }
 }
 
-/* ========== 生活日常 - 花瓣飘落动画 ========== */
-.life-header .falling-petals {
+/* ========== 生活日常 - 像素星星动画 ========== */
+.life-header .pixel-stars {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
+    left: 5%;
+    top: 30%;
+    z-index: 5;
 }
 
-.petal {
+.p-star {
     position: absolute;
-    font-size: 1.5rem;
-    animation: fallPetal 8s linear infinite;
-    animation-delay: calc(var(--i) * 1s);
-    opacity: 0.6;
+    font-size: 1.2rem;
+    color: var(--primary-light);
+    animation: starTwinkle 2s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.3s);
+    text-shadow: 0 0 8px rgba(99, 102, 241, 0.6);
 }
 
-.petal:nth-child(1) { left: 5%; top: -20px; }
-.petal:nth-child(2) { left: 20%; top: -20px; animation-delay: 1.2s; }
-.petal:nth-child(3) { left: 35%; top: -20px; animation-delay: 2.4s; }
-.petal:nth-child(4) { left: 50%; top: -20px; animation-delay: 3.6s; }
-.petal:nth-child(5) { left: 65%; top: -20px; animation-delay: 4.8s; }
-.petal:nth-child(6) { left: 80%; top: -20px; animation-delay: 6s; }
-.petal:nth-child(7) { left: 95%; top: -20px; animation-delay: 7.2s; }
+.p-star:nth-child(odd) {
+    color: var(--accent);
+}
 
-@keyframes fallPetal {
-    0% { 
-        transform: translateY(0) rotate(0deg) scale(1); 
-        opacity: 0;
-    }
-    10% { 
-        opacity: 0.6; 
-    }
-    90% { 
+.p-star:nth-child(1) { left: 0; top: 0; }
+.p-star:nth-child(2) { left: 25px; top: 15px; }
+.p-star:nth-child(3) { left: 10px; top: 35px; }
+.p-star:nth-child(4) { left: 30px; top: 50px; }
+.p-star:nth-child(5) { left: 5px; top: 70px; }
+
+@keyframes starTwinkle {
+    0%, 100% { 
         opacity: 0.4; 
+        transform: scale(0.8);
     }
-    100% { 
-        transform: translateY(300px) rotate(360deg) scale(0.8); 
-        opacity: 0;
+    50% { 
+        opacity: 1; 
+        transform: scale(1.2);
     }
 }
