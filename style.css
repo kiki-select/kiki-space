@@ -1025,4 +1025,70 @@ footer {
     .page-header {
         min-height: 30vh;
     }
+    
+    /* 首页响应式 */
+    .hero-content {
+        padding: 1.5rem;
+    }
+    
+    .name-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    
+    .slogan {
+        font-size: clamp(0.9rem, 3vw, 1.2rem);
+        margin-top: 1rem;
+    }
+    
+    .slogan-sub {
+        font-size: clamp(0.65rem, 2vw, 0.8rem);
+        margin-top: 0.5rem;
+    }
+    
+    .scroll-hint {
+        bottom: 1rem;
+    }
+    
+    .scroll-hint span {
+        font-size: 0.8rem;
+    }
+    
+    /* 内容区域 */
+    .section {
+        padding: 3rem 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .content-card {
+        padding: 1.5rem;
+    }
+    
+    /* 技能 */
+    .skills-container {
+        padding: 1.5rem;
+    }
+    
+    /* 联系方式 */
+    .contact-options {
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        padding: 0.5rem 1rem;
+    }
+    
+    .contact-icon {
+        font-size: 1rem;
+    }
+    
+    .contact-label {
+        font-size: 0.75rem;
+    }
+    
+    .contact-section h3 {
+        font-size: 1.2rem;
+    }
 }
