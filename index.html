@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiKi's Space | 游戏数据分析师</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <div class="nav-left">
+                <a href="index.html" class="nav-avatar">
+                    <img src="avatar.png" alt="KiKi" onerror="this.style.display='none'">
+                </a>
+                <a href="index.html" class="nav-logo">KiKi's Space</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">主页</a></li>
+                <li><a href="experience.html" class="nav-link">工作经历</a></li>
+                <li><a href="game.html" class="nav-link">游戏经历</a></li>
+                <li><a href="life.html" class="nav-link">生活日常</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 顶部介绍 -->
+    <header class="hero" id="home">
+        <div class="hero-bg">
+            <!-- 星空 -->
+            <div class="stars">
+                <div class="star" style="top: 8%; left: 20%; animation-delay: 0s;"></div>
+                <div class="star" style="top: 15%; left: 45%; animation-delay: 0.3s;"></div>
+                <div class="star" style="top: 5%; left: 70%; animation-delay: 0.6s;"></div>
+                <div class="star" style="top: 20%; left: 85%; animation-delay: 0.9s;"></div>
+                <div class="star" style="top: 12%; left: 30%; animation-delay: 1.2s;"></div>
+                <div class="star" style="top: 18%; left: 60%; animation-delay: 1.5s;"></div>
+                <div class="star" style="top: 25%; left: 75%; animation-delay: 0.4s;"></div>
+                <div class="star" style="top: 3%; left: 50%; animation-delay: 0.7s;"></div>
+            </div>
+            <!-- 像素云朵 -->
+            <div class="pixel-clouds">
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+                <div class="cloud cloud-3"></div>
+            </div>
+            <!-- 像素战斗机1 -->
+            <div class="pixel-plane">
+                <div class="plane-body"></div>
+                <div class="plane-wing"></div>
+            </div>
+            <!-- 像素战斗机2 -->
+            <div class="pixel-plane-2">
+                <div class="plane-body-2"></div>
+            </div>
+            <!-- 像素山脉 -->
+            <div class="pixel-mountains">
+                <div class="mountain mountain-1"></div>
+                <div class="mountain mountain-2"></div>
+                <div class="mountain mountain-3"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1 class="name-title">KiKi's Space</h1>
+            <p class="slogan">用数据解构虚拟世界，用审美记录真实生活</p>
+            <p class="slogan-sub">在这里，我记录在 0 与 1 之间跳动的行业洞察，也收藏每一个鲜活的日常瞬间</p>
+            <div class="scroll-hint">
+                <span>向下滚动探索</span>
+                <div class="arrow">↓</div>
+            </div>
+        </div>
+        <div class="particles"></div>
+    </header>
+
+    <!-- 关于我 -->
+    <section class="section about">
+        <h2 class="section-title">关于我</h2>
+        <div class="content-card">
+            <p>嗨！我是郑川奇，也可以叫我 KiKi~</p>
+            <p>一名热爱游戏的数据分析师，擅长从海量游戏数据中挖掘有价值的 insights。</p>
+            <p>相信数据不只是数字，而是讲述游戏故事的最佳方式 📊</p>
+        </div>
+    </section>
+
+    <!-- 工作经历预览 -->
+    <section class="section experience-preview">
+        <h2 class="section-title">工作经历</h2>
+        <p class="section-desc">查看更多 → <a href="experience.html">工作经历详情</a></p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>游戏数据分析师</h3>
+                    <span class="company">某游戏公司</span>
+                    <span class="period">2022 - 至今</span>
+                    <ul>
+                        <li>负责游戏核心指标监控与分析</li>
+                        <li>用户行为分析，输出运营建议</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>数据分析师</h3>
+                    <span class="company">某互联网公司</span>
+                    <span class="period">2020 - 2022</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能展示 -->
+    <section class="section skills">
+        <h2 class="section-title">技能树</h2>
+        <div class="skills-container">
+            <div class="skill-item">
+                <span class="skill-name">Python</span>
+                <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">SQL</span>
+                <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">Excel</span>
+                <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">Tableau</span>
+                <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">R</span>
+                <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="contact-section">
+            <h3>Let's Connect!</h3>
+            <p>有问题想聊？随时找我~</p>
+            <div class="contact-options">
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span class="contact-label">手机</span>
+                    <span class="contact-value">138****8888</span>
+                </div>
+                <div class="contact-item wechat">
+                    <span class="contact-icon">💬</span>
+                    <span class="contact-label">微信</span>
+                    <div class="wechat-qr">
+                        <img src="wechat-qr.png" alt="微信二维码" onerror="this.parentElement.textContent='微信二维码'">
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span class="contact-label">邮箱</span>
+                    <span class="contact-value">kiki@example.com</span>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2026 KiKi | 郑川奇</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
