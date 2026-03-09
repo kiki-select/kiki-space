@@ -901,7 +901,7 @@ footer {
 
 /* ========== 页面头部 ========== */
 .page-header {
-    min-height: 40vh;
+    min-height: 25vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1030,7 +1030,7 @@ footer {
     }
     
     .page-header {
-        min-height: 30vh;
+        min-height: 20vh;
     }
     
     /* 首页响应式 */
