@@ -1692,3 +1692,111 @@ footer {
         grid-row: span 1;
     }
 }
+
+/* ========== 游戏页面战斗机动画 ========== */
+.game-plane {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    width: 50px;
+    height: 25px;
+    animation: planeMove 4s ease-in-out infinite;
+    z-index: 10;
+}
+
+.game-plane .plane-body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-light), var(--secondary));
+    clip-path: polygon(
+        0% 50%, 15% 35%, 35% 35%, 35% 15%, 55% 15%, 
+        55% 0%, 75% 0%, 75% 20%, 100% 50%, 75% 80%, 
+        75% 100%, 55% 100%, 55% 85%, 35% 85%, 35% 65%, 15% 65%
+    );
+}
+
+.game-plane .plane-wing {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    width: 15px;
+    height: 4px;
+    background: var(--accent);
+    animation: wingFlap 0.15s ease-in-out infinite alternate;
+}
+
+@keyframes planeMove {
+    0%, 100% { 
+        transform: translateX(0) translateY(0); 
+    }
+    25% { 
+        transform: translateX(30px) translateY(-15px); 
+    }
+    50% { 
+        transform: translateX(0) translateY(10px); 
+    }
+    75% { 
+        transform: translateX(-20px) translateY(-10px); 
+    }
+}
+
+@keyframes wingFlap {
+    from { transform: scaleY(1); }
+    to { transform: scaleY(0.6); }
+}
+
+/* 子弹 */
+.bullet {
+    position: absolute;
+    width: 8px;
+    height: 3px;
+    background: #22d3ee;
+    border-radius: 2px;
+    top: 60%;
+    left: 80%;
+    animation: shoot 0.5s linear infinite;
+    box-shadow: 0 0 5px #22d3ee;
+}
+
+.bullet-2 {
+    animation-delay: 0.25s;
+}
+
+@keyframes shoot {
+    0% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(100px); }
+}
+
+/* 敌机 */
+.enemy {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ef4444;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: enemyFly 6s linear infinite;
+    opacity: 0.7;
+}
+
+.enemy-1 {
+    left: 5%;
+    top: 30%;
+    animation-delay: 0s;
+}
+
+.enemy-2 {
+    left: 15%;
+    top: 60%;
+    animation-delay: 2s;
+}
+
+.enemy-3 {
+    left: 8%;
+    top: 80%;
+    animation-delay: 4s;
+}
+
+@keyframes enemyFly {
+    0% { transform: translateX(0); opacity: 0.7; }
+    100% { transform: translateX(300px); opacity: 0; }
+}
