@@ -32,11 +32,11 @@
             <!-- SQL代码逐行动画 -->
             <div class="sql-code">
                 <div class="sql-line" style="--delay:0s">SELECT user_id,</div>
-                <div class="sql-line" style="--delay:1s">       COUNT(*) as plays,</div>
-                <div class="sql-line" style="--delay:2s">       SUM(play_time) as total_time</div>
-                <div class="sql-line" style="--delay:3s">FROM game_events</div>
-                <div class="sql-line" style="--delay:4s">WHERE date >= '2026-01-01'</div>
-                <div class="sql-line" style="--delay:5s">GROUP BY user_id;</div>
+                <div class="sql-line" style="--delay:1s">       SUM(play_time) as total_time</div>
+                <div class="sql-line" style="--delay:2s">FROM events</div>
+                <div class="sql-line" style="--delay:3s">WHERE #event = 'game_events'</div>
+                <div class="sql-line" style="--delay:4s">     AND ${dt:date}</div>
+                <div class="sql-line" style="--delay:5s">Group By 1</div>
             </div>
             <div class="stars">
                 <div class="star" style="top: 10%; left: 25%; animation-delay: 0s;"></div>
