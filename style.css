@@ -2099,6 +2099,135 @@ footer {
     box-shadow: 0 5px 20px rgba(99, 102, 241, 0.5);
 }
 
+/* ========== 主页像素高达 ========== */
+.hero-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.pixel-gundam {
+    position: relative;
+    width: 80px;
+    height: 100px;
+    animation: gundamFloat 2s ease-in-out infinite;
+}
+
+.gundam-head {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 20px;
+    background: #e8e8e8;
+    border: 2px solid #333;
+}
+
+.gundam-head::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 2px;
+    width: 8px;
+    height: 6px;
+    background: #e74c3c;
+}
+
+.gundam-head::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: 2px;
+    width: 8px;
+    height: 6px;
+    background: #e74c3c;
+}
+
+.gundam-body {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 35px;
+    background: #3498db;
+    border: 2px solid #333;
+}
+
+.gundam-body::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: #f1c40f;
+    border: 1px solid #333;
+}
+
+.gundam-arm-left {
+    position: absolute;
+    top: 25px;
+    left: 5px;
+    width: 12px;
+    height: 30px;
+    background: #3498db;
+    border: 2px solid #333;
+}
+
+.gundam-arm-right {
+    position: absolute;
+    top: 25px;
+    right: 5px;
+    width: 12px;
+    height: 30px;
+    background: #3498db;
+    border: 2px solid #333;
+}
+
+.gundam-leg-left {
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    width: 14px;
+    height: 35px;
+    background: #2c3e50;
+    border: 2px solid #333;
+}
+
+.gundam-leg-right {
+    position: absolute;
+    top: 55px;
+    right: 20px;
+    width: 14px;
+    height: 35px;
+    background: #2c3e50;
+    border: 2px solid #333;
+}
+
+.gundam-beam {
+    position: absolute;
+    top: 30px;
+    right: -15px;
+    width: 25px;
+    height: 6px;
+    background: #e74c3c;
+    animation: beamGlow 1s ease-in-out infinite alternate;
+}
+
+@keyframes gundamFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes beamGlow {
+    from { opacity: 0.6; box-shadow: 0 0 5px #e74c3c; }
+    to { opacity: 1; box-shadow: 0 0 15px #e74c3c; }
+}
+
 @media (max-width: 768px) {
 
 
