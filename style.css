@@ -2099,25 +2099,6 @@ footer {
     box-shadow: 0 5px 20px rgba(99, 102, 241, 0.5);
 }
 
-/* ========== 主页高达图片 ========== */
-.hero-title-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-}
-
-.hero-gundam {
-    height: 120px;
-    image-rendering: pixelated;
-    animation: gundamBounce 2s ease-in-out infinite;
-}
-
-@keyframes gundamBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-
 @media (max-width: 768px) {
 
 
