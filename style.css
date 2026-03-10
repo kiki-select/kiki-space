@@ -2104,128 +2104,308 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 .pixel-gundam {
     position: relative;
-    width: 80px;
-    height: 100px;
+    width: 160px;
+    height: 180px;
+    image-rendering: pixelated;
     animation: gundamFloat 2s ease-in-out infinite;
 }
 
+/* 头部 */
 .gundam-head {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 24px;
-    height: 20px;
+    width: 50px;
+    height: 40px;
     background: #e8e8e8;
-    border: 2px solid #333;
+    border: 3px solid #1a1a1a;
+    box-shadow: inset 0 -5px 0 #ccc;
 }
 
 .gundam-head::before {
     content: '';
     position: absolute;
-    top: 6px;
-    left: 2px;
-    width: 8px;
-    height: 6px;
-    background: #e74c3c;
+    top: 10px;
+    left: 4px;
+    width: 16px;
+    height: 12px;
+    background: #c0392b;
+    box-shadow: 22px 0 0 #c0392b;
 }
 
 .gundam-head::after {
     content: '';
     position: absolute;
-    top: 6px;
-    right: 2px;
-    width: 8px;
-    height: 6px;
-    background: #e74c3c;
-}
-
-.gundam-body {
-    position: absolute;
-    top: 22px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
     width: 30px;
-    height: 35px;
+    height: 8px;
+    background: #e74c3c;
+    border: 2px solid #1a1a1a;
+}
+
+/* 脖子 */
+.gundam-neck {
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 10px;
+    background: #7f8c8d;
+    border: 2px solid #1a1a1a;
+}
+
+/* 躯干 */
+.gundam-body {
+    position: absolute;
+    top: 46px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 60px;
     background: #3498db;
-    border: 2px solid #333;
+    border: 3px solid #1a1a1a;
 }
 
 .gundam-body::before {
     content: '';
     position: absolute;
-    top: 8px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    background: #f1c40f;
-    border: 1px solid #333;
+    width: 30px;
+    height: 20px;
+    background: #f39c12;
+    border: 2px solid #1a1a1a;
 }
 
+.gundam-body::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    background: #2ecc71;
+    box-shadow: 45px 0 0 #2ecc71;
+}
+
+/* 驾驶舱盖 */
+.gundam-cockpit {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 15px;
+    background: #5dade2;
+    border: 2px solid #1a1a1a;
+    border-radius: 3px;
+}
+
+/* 肩膀装甲 */
+.gundam-shoulder-left {
+    position: absolute;
+    top: 42px;
+    left: 15px;
+    width: 25px;
+    height: 25px;
+    background: #3498db;
+    border: 3px solid #1a1a1a;
+}
+
+.gundam-shoulder-right {
+    position: absolute;
+    top: 42px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    background: #3498db;
+    border: 3px solid #1a1a1a;
+}
+
+/* 手臂 */
 .gundam-arm-left {
     position: absolute;
-    top: 25px;
-    left: 5px;
-    width: 12px;
-    height: 30px;
+    top: 50px;
+    left: 0;
+    width: 22px;
+    height: 50px;
+    background: #e8e8e8;
+    border: 3px solid #1a1a1a;
+}
+
+.gundam-arm-left::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 2px;
+    width: 14px;
+    height: 15px;
     background: #3498db;
-    border: 2px solid #333;
+    border: 2px solid #1a1a1a;
 }
 
 .gundam-arm-right {
     position: absolute;
-    top: 25px;
-    right: 5px;
-    width: 12px;
-    height: 30px;
-    background: #3498db;
-    border: 2px solid #333;
+    top: 50px;
+    right: 0;
+    width: 22px;
+    height: 50px;
+    background: #e8e8e8;
+    border: 3px solid #1a1a1a;
 }
 
-.gundam-leg-left {
+.gundam-arm-right::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 2px;
+    width: 14px;
+    height: 15px;
+    background: #3498db;
+    border: 2px solid #1a1a1a;
+}
+
+/* 盾牌 */
+.gundam-shield {
     position: absolute;
     top: 55px;
-    left: 20px;
-    width: 14px;
-    height: 35px;
+    right: -10px;
+    width: 25px;
+    height: 45px;
+    background: #ecf0f1;
+    border: 3px solid #1a1a1a;
+}
+
+.gundam-shield::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 25px;
+    background: #e74c3c;
+    border: 2px solid #1a1a1a;
+}
+
+/* 武器 - 光束步枪 */
+.gundam-rifle {
+    position: absolute;
+    top: 70px;
+    right: -30px;
+    width: 40px;
+    height: 15px;
+    background: #95a5a6;
+    border: 2px solid #1a1a1a;
+}
+
+.gundam-rifle::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 3px;
+    width: 15px;
+    height: 9px;
+    background: #7f8c8d;
+    border: 2px solid #1a1a1a;
+}
+
+/* 腿部 */
+.gundam-leg-left {
+    position: absolute;
+    top: 100px;
+    left: 35px;
+    width: 30px;
+    height: 60px;
     background: #2c3e50;
-    border: 2px solid #333;
+    border: 3px solid #1a1a1a;
+}
+
+.gundam-leg-left::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -3px;
+    width: 36px;
+    height: 15px;
+    background: #e74c3c;
+    border: 3px solid #1a1a1a;
 }
 
 .gundam-leg-right {
     position: absolute;
-    top: 55px;
-    right: 20px;
-    width: 14px;
-    height: 35px;
+    top: 100px;
+    right: 35px;
+    width: 30px;
+    height: 60px;
     background: #2c3e50;
-    border: 2px solid #333;
+    border: 3px solid #1a1a1a;
 }
 
+.gundam-leg-right::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -3px;
+    width: 36px;
+    height: 15px;
+    background: #e74c3c;
+    border: 3px solid #1a1a1a;
+}
+
+/* 翅膀/推进器 */
+.gundam-wing-left {
+    position: absolute;
+    top: 60px;
+    left: -25px;
+    width: 30px;
+    height: 50px;
+    background: linear-gradient(135deg, #ecf0f1 50%, transparent 50%);
+    border: 2px solid #1a1a1a;
+    transform: skewY(-20deg);
+}
+
+.gundam-wing-right {
+    position: absolute;
+    top: 60px;
+    right: -25px;
+    width: 30px;
+    height: 50px;
+    background: linear-gradient(-135deg, #ecf0f1 50%, transparent 50%);
+    border: 2px solid #1a1a1a;
+    transform: skewY(20deg);
+}
+
+/* 光束 */
 .gundam-beam {
     position: absolute;
-    top: 30px;
-    right: -15px;
-    width: 25px;
+    top: 78px;
+    right: -70px;
+    width: 50px;
     height: 6px;
     background: #e74c3c;
-    animation: beamGlow 1s ease-in-out infinite alternate;
+    animation: beamGlow 0.5s ease-in-out infinite alternate;
+    box-shadow: 0 0 10px #e74c3c, 0 0 20px #e74c3c;
 }
 
 @keyframes gundamFloat {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-10px); }
 }
 
 @keyframes beamGlow {
-    from { opacity: 0.6; box-shadow: 0 0 5px #e74c3c; }
-    to { opacity: 1; box-shadow: 0 0 15px #e74c3c; }
+    from { opacity: 0.7; }
+    to { opacity: 1; }
 }
 
 @media (max-width: 768px) {
