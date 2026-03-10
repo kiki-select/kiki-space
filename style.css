@@ -2035,65 +2035,75 @@ footer {
 
 /* ========== 技能树样式 ========== */
 .skill-tree {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .skill-branch {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 25px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.skill-branch:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
 }
 
 .skill-root {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
-    padding: 12px 24px;
-    border-radius: 25px;
+    padding: 10px 20px;
+    border-radius: 20px;
     font-weight: bold;
-    font-size: 16px;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-    position: relative;
-}
-
-.skill-root::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 15px;
-    background: var(--primary-light);
+    font-size: 15px;
+    margin-bottom: 20px;
+    white-space: nowrap;
 }
 
 .skill-children {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     gap: 10px;
-    padding-top: 15px;
+    width: 100%;
 }
 
 .skill-node {
-    background: var(--bg-card);
-    border: 2px solid var(--primary-light);
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.3);
     color: var(--text-light);
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 10px 15px;
+    border-radius: 10px;
     font-size: 14px;
+    text-align: center;
     transition: all 0.3s ease;
-    cursor: default;
 }
 
 .skill-node:hover {
     background: var(--primary);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 20px rgba(99, 102, 241, 0.5);
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .skill-tree {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .skill-tree {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
